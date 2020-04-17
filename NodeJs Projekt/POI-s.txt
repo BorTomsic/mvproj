@@ -1,0 +1,31 @@
+/**
+*
+*   server vzet iz uvodne demonstracije na strani
+*       Node,About, https://nodejs.org/en/about/, prevz. 9.2.2019
+*    vsebino prestavimo v datoteko aboutServer.js
+*
+*
+*    - zaženemo:   
+*                 node aboutServer,jas
+*    - test:
+*               iz brskalnika naslovimo http://localhost:3000
+*
+*    POIS:
+*       - ali se strežnik odziva ? (z izpisom Hello W...) DA
+
+*       - kaj če izpis v kodi spremenite iz 'Hello World\n' v 'Hello 0000000000 World\n' ?
+*            - se odziv v brskalniku spremeni brez ponovnega zagona strežnika/zgolj z osvežitvijo vsebine brskalnika NE
+*            - CTRL+C za prekinitev izvajanja strežnika, ponovni zagon strežnika. Kakšna je sedaj vsebina -> izpise se: Hello 0000000000 World
+
+*       - kako se strežnik odzove, če naslovite:
+*               - http://localhost:3000/afna ISTO K PREJ
+*               - http://localhost:3000/ ISTO K PREJ
+*               - http://localhost:3000/lolipop/123/jokl ISTO K PREJ
+
+*       - med vrstici 36 in 37 dodajte vrstico :    res.write(req.url+"\n");   in ponovno izvedite zahteve:
+*               - http://localhost:3000/afna   izpiše /afna Hello 0000000000 World 
+*               - http://localhost:3000/       izpiše / Hello 0000000000 World 
+*               - http://localhost:3000/lolipop/123/jokl izpiše: /lolipop/123/jokl Hello 0000000000 World
+
+*        kaj opazite ???? Izpiše nam še del URL-ja
+*/
